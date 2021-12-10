@@ -5,7 +5,7 @@
     /// </summary>
     public class FadeInOutSampleProvider : ISampleProvider
     {
-        enum FadeState
+        public enum FadeState
         {
             Silence,
             FadingIn,
@@ -17,7 +17,9 @@
         private readonly ISampleProvider source;
         private int fadeSamplePosition;
         private int fadeSampleCount;
-        private FadeState fadeState;
+        private int fadeOutDelaySamples;
+        private int fadeOutDelayPosition;
+        public FadeState fadeState;
 
         /// <summary>
         /// Creates a new FadeInOutSampleProvider
